@@ -1,0 +1,19 @@
+# Configuración local / credenciales
+config.php
+.env
+
+# XAMPP / logs
+*.log
+/tmp/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Node (si usan npm para algo del frontend)
+node_modules/
