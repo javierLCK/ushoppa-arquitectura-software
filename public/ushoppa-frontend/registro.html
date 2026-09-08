@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ushoppa Market · Crear cuenta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="topbar">
+        <div class="topbar__inner">
+            <a href="index.html" class="brand">
+                <span class="brand__icon">U</span>
+                <span class="brand__name">shoppa</span>
+                <span class="brand__badge">MARKET</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="login-wrap">
+        <section class="login-card login-card--wide">
+
+            <h1 class="login-card__title">Crear cuenta</h1>
+            <p class="login-card__subtitle">Únete a la comunidad Ushoppa</p>
+
+            <!-- Zona de mensajes generales, controlada por JavaScript -->
+            <div id="alertBox" class="alert" hidden></div>
+
+            <form class="login-form" id="registroForm" action="php/registro.php" method="POST" novalidate>
+
+                <!-- Selector de tipo de cuenta -->
+                <div class="role-card-group" role="radiogroup" aria-label="Tipo de cuenta">
+                    <label class="role-card is-selected" data-role="comprador">
+                        <input type="radio" name="rol" value="comprador" checked>
+                        <span class="role-card__icon">🛍️</span>
+                        <span class="role-card__title">Comprador</span>
+                        <span class="role-card__desc">Quiero comprar productos</span>
+                    </label>
+
+                    <label class="role-card" data-role="vendedor">
+                        <input type="radio" name="rol" value="vendedor">
+                        <span class="role-card__icon">🏪</span>
+                        <span class="role-card__title">Vendedor</span>
+                        <span class="role-card__desc">Quiero vender productos</span>
+                    </label>
+                </div>
+
+                <!-- Nombre / Apellido -->
+                <div class="form-grid-2">
+                    <div>
+                        <label for="nombre" class="field-label">Nombre</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            class="field-input"
+                            placeholder="Juan"
+                            autocomplete="given-name"
+                            required>
+                        <span class="field-error" id="nombreError"></span>
+                    </div>
+                    <div>
+                        <label for="apellido" class="field-label">Apellido</label>
+                        <input
+                            type="text"
+                            id="apellido"
+                            name="apellido"
+                            class="field-input"
+                            placeholder="García"
+                            autocomplete="family-name"
+                            required>
+                        <span class="field-error" id="apellidoError"></span>
+                    </div>
+                </div>
+
+                <!-- Correo -->
+                <div class="form-field">
+                    <label for="email" class="field-label">Correo electrónico</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="field-input"
+                        placeholder="juan@ejemplo.com"
+                        autocomplete="email"
+                        required>
+                    <span class="field-error" id="emailError"></span>
+                </div>
+
+                <!-- Contraseña -->
+                <div class="form-field">
+                    <label for="password" class="field-label">Contraseña</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="field-input"
+                        placeholder="Mínimo 8 caracteres"
+                        autocomplete="new-password"
+                        required>
+
+                    <div class="password-meter">
+                        <div class="password-meter__track">
+                            <div class="password-meter__bar" id="strengthBar"></div>
+                        </div>
+                        <span class="password-meter__label" id="strengthLabel">Débil</span>
+                    </div>
+                    <span class="field-error" id="passwordError"></span>
+                </div>
+
+                <!-- Confirmar contraseña -->
+                <div class="form-field">
+                    <label for="passwordConfirm" class="field-label">Confirmar contraseña</label>
+                    <input
+                        type="password"
+                        id="passwordConfirm"
+                        name="passwordConfirm"
+                        class="field-input"
+                        placeholder="Repite tu contraseña"
+                        autocomplete="new-password"
+                        required>
+                    <span class="field-error" id="passwordConfirmError"></span>
+                </div>
+
+                <!-- Términos y condiciones -->
+                <label class="terms-checkbox">
+                    <input type="checkbox" name="acepta_terminos" id="aceptaTerminos">
+                    <span>Acepto los <a href="terminos.html">Términos de uso</a> y la <a href="privacidad.html">Política de privacidad</a> de Ushoppa</span>
+                </label>
+                <span class="field-error" id="terminosError"></span>
+
+                <button type="submit" class="btn-submit">Crear mi cuenta</button>
+            </form>
+
+            <p class="signup-line">¿Ya tienes cuenta? <a href="index.html">Inicia sesión</a></p>
+        </section>
+
+        <p class="footnote">🔒 Protegido con cifrado SSL · NexoMarket © 2026</p>
+    </main>
+
+    <script src="js/registro.js"></script>
+</body>
+</html>

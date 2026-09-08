@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ushoppa Market · Iniciar sesión</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="topbar">
+        <div class="topbar__inner">
+            <a href="index.html" class="brand">
+                <span class="brand__icon">U</span>
+                <span class="brand__name">shoppa</span>
+                <span class="brand__badge">MARKET</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="login-wrap">
+        <section class="login-card">
+
+            <div class="login-card__avatar">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M4 20C4 16.6863 7.58172 14 12 14C16.4183 14 20 16.6863 20 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <h1 class="login-card__title">Bienvenido de vuelta</h1>
+            <p class="login-card__subtitle">Ingresa a tu cuenta Ushoppa</p>
+
+            <!-- Selector de rol -->
+            <div class="role-switch" role="tablist" aria-label="Tipo de cuenta">
+                <button type="button" class="role-switch__btn is-active" data-role="comprador">Comprador</button>
+                <button type="button" class="role-switch__btn" data-role="vendedor">Vendedor</button>
+                <button type="button" class="role-switch__btn" data-role="admin">Admin</button>
+            </div>
+
+            <button type="button" id="quickFillBtn" class="quick-fill-link">↑ Acceso rápido (mockup)</button>
+
+            <!-- Zona de mensajes (errores/avisos), controlada por JavaScript -->
+            <div id="alertBox" class="alert" hidden></div>
+
+            <form class="login-form" id="loginForm" action="php/login.php" method="POST" novalidate>
+                <input type="hidden" name="rol" id="rolInput" value="comprador">
+
+                <label for="email" class="field-label">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="field-input"
+                    placeholder="maria@email.com"
+                    required
+                    autocomplete="username">
+
+                <div class="field-row">
+                    <label for="password" class="field-label">Contraseña</label>
+                    <a href="recuperar.html" class="field-forgot">¿Olvidaste tu contraseña?</a>
+                </div>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="field-input"
+                    placeholder="••••••••"
+                    required
+                    autocomplete="current-password">
+
+                <label class="checkbox">
+                    <input type="checkbox" name="recordar" id="recordar" checked>
+                    <span>Mantener sesión iniciada</span>
+                </label>
+
+                <button type="submit" class="btn-submit">Iniciar sesión</button>
+            </form>
+
+            <p class="signup-line">¿No tienes cuenta? <a href="registro.html">Regístrate gratis</a></p>
+        </section>
+
+        <p class="footnote">🔒 Protegido con cifrado SSL · NexoMarket © 2026</p>
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
