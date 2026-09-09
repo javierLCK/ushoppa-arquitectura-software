@@ -1,0 +1,4 @@
+Email			Contraseña		Rol
+cliente@test.com	   1234		      Cliente
+vendedor@test.com	   1234		      Vendedor
+admin@test.com		   1234		    Administrador
